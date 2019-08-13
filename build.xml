@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Sunlauncher">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../media/sundev79/lolusb/eclipse/eclipse/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="11"/>
+    <property name="source" value="11"/>
+    <path id="Maven Dependencies.libraryclasspath"/>
+    <path id="Sunlauncher.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="lib/httpcore-nio-4.4.11-javadoc.jar"/>
+        <pathelement location="lib/httpcore-nio-4.4.11-sources.jar"/>
+        <pathelement location="lib/httpcore-nio-4.4.11.jar"/>
+        <pathelement location="lib/jgoodies-forms-1.8.0-sources.jar"/>
+        <pathelement location="lib/jgoodies-forms-1.8.0.jar"/>
+        <pathelement location="lib/json-simple-1.1.1.jar"/>
+        <pathelement location="lib/JTattoo-1.6.11.jar"/>
+        <pathelement location="lib/LauncherLib.jar"/>
+        <pathelement location="lib/miglayout15-swing.jar"/>
+        <pathelement location="lib/okhttp-4.0.0.jar"/>
+        <pathelement location="lib/okio-2.2.2.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5-javadoc.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5-sources.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9-javadoc.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9-sources.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9.jar"/>
+        <pathelement location="lib/httpcore-4.4.11.jar"/>
+        <pathelement location="lib/httpasyncclient-4.0-beta4.jar.zip"/>
+        <pathelement location="lib/httpclient-4.5.9.jar"/>
+        <pathelement location="lib/httpasyncclient-4.1.4.jar"/>
+        <pathelement location="lib/httpmime-4.5.9.jar"/>
+        <pathelement location="lib/kotlin-stdlib-1.3.40.jar"/>
+        <pathelement location="lib/kotlin-stdlib-common-1.3.41.jar"/>
+        <pathelement location="lib/zipper-0.2.3-javadoc.jar"/>
+        <pathelement location="lib/zipper-0.2.3-sources.jar"/>
+        <pathelement location="lib/zipper-0.2.3.jar"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <path id="run.New_configuration.classpath">
+        <path refid="Sunlauncher.classpath"/>
+        <pathelement location="lib/httpcore-nio-4.4.11-javadoc.jar"/>
+        <pathelement location="lib/httpcore-nio-4.4.11-sources.jar"/>
+        <pathelement location="lib/httpcore-nio-4.4.11.jar"/>
+        <pathelement location="lib/jgoodies-forms-1.8.0-sources.jar"/>
+        <pathelement location="lib/jgoodies-forms-1.8.0.jar"/>
+        <pathelement location="lib/json-simple-1.1.1.jar"/>
+        <pathelement location="lib/JTattoo-1.6.11.jar"/>
+        <pathelement location="lib/LauncherLib.jar"/>
+        <pathelement location="lib/miglayout15-swing.jar"/>
+        <pathelement location="lib/okhttp-4.0.0.jar"/>
+        <pathelement location="lib/okio-2.2.2.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5-javadoc.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5-sources.jar"/>
+        <pathelement location="lib/openlauncherlib-3.0.5.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9-javadoc.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9-sources.jar"/>
+        <pathelement location="lib/unirest-java-1.4.9.jar"/>
+        <pathelement location="lib/httpcore-4.4.11.jar"/>
+        <pathelement location="lib/httpasyncclient-4.0-beta4.jar.zip"/>
+        <pathelement location="lib/httpclient-4.5.9.jar"/>
+        <pathelement location="lib/httpasyncclient-4.1.4.jar"/>
+        <pathelement location="lib/httpmime-4.5.9.jar"/>
+        <pathelement location="lib/kotlin-stdlib-1.3.40.jar"/>
+        <pathelement location="lib/kotlin-stdlib-common-1.3.41.jar"/>
+        <pathelement location="lib/zipper-0.2.3-javadoc.jar"/>
+        <pathelement location="lib/zipper-0.2.3-sources.jar"/>
+        <pathelement location="lib/zipper-0.2.3.jar"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="Sunlauncher.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="New_configuration">
+        <java classname="com.sunProject.SunLauncher.main" failonerror="true" fork="yes">
+            <classpath refid="run.New_configuration.classpath"/>
+        </java>
+    </target>
+</project>
